@@ -1,0 +1,38 @@
+[ policy_match ]
+countryName = match
+stateOrProvinceName = match
+organizationName = match
+organizationalUnitName = optional
+commonName = supplied
+emailAddress = optional
+
+[ req ]
+default_bits = 4096
+default_keyfile = /certs/CertificateKey.pem    ## The default private key file name.
+default_md = sha256                           ## Use SHA-256 for Signatures
+distinguished_name = req_dn
+req_extensions = v3_req
+x509_extensions = v3_ca # The extentions to add to the self signed cert
+prompt = no
+
+[ v3_req ]
+subjectKeyIdentifier  = hash
+basicConstraints = CA:FALSE
+keyUsage = critical, digitalSignature, keyEncipherment
+nsComment = "OpenSSL Generated Certificate"
+extendedKeyUsage  = serverAuth, clientAuth
+
+[ req_dn ]
+countryName = US
+stateOrProvinceName = NY
+localityName = NewYork
+organizationName = MongoDB
+organizationalUnitName = Root
+commonName = RootCert
+
+[ v3_ca ]
+# Extensions for a typical CA
+
+subjectKeyIdentifier=hash
+basicConstraints = critical,CA:true
+authorityKeyIdentifier=keyid:always,issuer:always

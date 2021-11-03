@@ -1,0 +1,5 @@
+version: "3.10"
+services:
+  mongotestcerts:
+    build: ./mongotestcerts
+    container_name: mongotestcerts

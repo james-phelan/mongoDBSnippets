@@ -1,0 +1,23 @@
+[ req ]
+default_bits = 4096
+default_keyfile = /certs/ClientCertificateKey.pem    ## The default private key file name.
+default_md = sha256
+distinguished_name = req_dn
+req_extensions = v3_req
+prompt = no
+
+[ v3_req ]
+subjectKeyIdentifier  = hash
+basicConstraints = CA:FALSE
+keyUsage = critical, digitalSignature, keyEncipherment
+nsComment = "OpenSSL Generated Certificate"
+extendedKeyUsage  = serverAuth, clientAuth
+
+
+[ req_dn ]
+countryName = US
+stateOrProvinceName = NY
+localityName = NewYork
+organizationName = MongoDB
+organizationalUnitName = Client
+commonName = FQDNHOSTNAME
