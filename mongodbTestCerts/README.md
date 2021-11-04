@@ -1,6 +1,8 @@
 # Test certificates for MongoDB
 
-This demo shows how to set up a certificate authority using `openssl` and use it to generate client and server certificates for use with MongoDB.
+This demo shows how to set up a certificate authority using `openssl` and use it to generate client and server certificates for use with MongoDB. Suitable for testing only and no recommended for production use.
+
+X509 certificates are created via the [mongod/mongodSetup.sh](mongod/mongodSetup.sh), X509 authenticated user is added via the [mongod/createDBUser.js](mongod/createDBUser.js) script.
 
 ## Usage
 
