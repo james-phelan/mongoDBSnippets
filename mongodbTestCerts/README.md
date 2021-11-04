@@ -41,7 +41,7 @@ openssl x509 -text -in /certs/client.pem
 ```
 mongo --tls --tlsCertificateKeyFile /certs/client.pem --tlsCAFile /certs/ca.pem --authenticationMechanism MONGODB-X509 --authenticationDatabase '$external' --host 127.0.0.1
 
-openssl s_client -connect `hostname -f`:27017 -CAfile /certs/ca.pem  -cert /certs/client.pem
+openssl s_client -connect 127.0.0.1:27017 -CAfile /certs/ca.pem  -cert /certs/client.pem
 ```
 
 ## Reference
